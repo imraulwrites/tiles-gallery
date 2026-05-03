@@ -21,14 +21,19 @@ function NavbarPage() {
         <header className="flex h-16 items-center justify-between px-6">
           <div className="flex items-center gap-3">
             {/* <Logo /> */}
-            <p className="font-bold">ACME</p>
+            <Link href="/">
+              <p className="font-extrabold text-2xl font-stretch-125% ">Tiles Galore</p>
+            </Link>
           </div>
-          <ul className="flex items-center gap-4">
+          <ul className="flex items-center gap-6 text-base font-bold uppercase">
             <li>
-              <Link href="#">Features</Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="#">Pricing</Link>
+              <Link href="/all-tiles">All Tiles</Link>
+            </li>
+            <li>
+              <Link href="/my-profile">My Profile</Link>
             </li>
           </ul>
 
