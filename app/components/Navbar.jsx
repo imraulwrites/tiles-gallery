@@ -1,7 +1,8 @@
 'use client';
 
-import { Link, Button } from '@heroui/react';
+import {  Button } from '@heroui/react';
 import { signOut, useSession } from '../lib/auth-client';
+import Link from 'next/link';
 
 function NavbarPage() {
   const { data, isPending } = useSession();

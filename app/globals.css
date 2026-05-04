@@ -38,3 +38,7 @@ body {
     text-decoration: none;
   }
 }
+
+.custom-icon {
+  @apply w-[18px] h-[18px] md:w-[28px] md:h-[28px];
+}
