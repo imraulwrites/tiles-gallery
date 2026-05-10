@@ -4,8 +4,8 @@ import { LogoFacebook, LogoTelegram, LogoSlack } from '@gravity-ui/icons';
 
 function Footer() {
   return (
-    <footer className="bg-amber-900 border">
-      <div className=" wrapper text-white pt-20 text-center">
+    <footer className="bg-amber-900 px-6">
+      <div className="text-white pt-20 text-center">
         <h1 className="text-6xl font-extrabold">Tiles Galore</h1>
 
         <p className="mt-3 text-sm">

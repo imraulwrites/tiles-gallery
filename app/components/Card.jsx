@@ -5,9 +5,9 @@ import Link from 'next/link';
 function CardComponent({ data }) {
   const { id, title, image } = data;
   return (
-    <div className="bg-background/90 relative w-fit rounded-sm text-foreground ">
-      <div className="overflow-hidden w-fit p-2">
-        <img className="h-[250px] sm:h-[300px] md:h-[350px] rounded-sm" src={image} alt="" />
+    <div className="bg-background/90 relative rounded-sm text-foreground ">
+      <div className="aspect-square overflow-hidden p-2">
+        <img className="w-full h-full object-cover object-center rounded-sm" src={image} alt="" />
       </div>
 
       <div className="p-4">
