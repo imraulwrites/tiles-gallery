@@ -1,7 +1,44 @@
-import React from 'react';
+import { CircleDollar } from '@gravity-ui/icons';
+import { Avatar, Button, Card, CloseButton, Link } from '@heroui/react';
 
-function TilesPage() {
-  return <div>TilesPage</div>;
+async function TilesPage(props) {
+  const { id } = await props.params;
+  let tilesDetails;
+  try {
+    const data = await fetch('https://tiles-gallery-server-fowg.onrender.com/products');
+    const result = await data.json();
+
+    console.log(result);
+
+    tilesDetails = result.filter(item => item.id == id);
+
+    console.log(tilesDetails);
+  } catch (error) {
+    console.log(error);
+  }
+
+  const { title, description, image, price, material, inStock } = tilesDetails[0];
+
+  return (
+    <div className="col-span-12 flex h-auto flex-col sm:flex-row gap-6 py-10">
+      <div className="relative w-full shrink-0 overflow-hidden rounded-2xl flex flex-1 ">
+        <img
+          alt="Cherries"
+          className="pointer-events-none inset-0 h-auto w-full scale-125 object-contain select-none"
+          loading="lazy"
+          src={image}
+        />
+      </div>
+      <div className="flex flex-1 flex-col justify-center gap-3">
+        <div className="flex flex-col gap-1">
+          <h1 className="text-4xl font-semibold pb-4">{title}</h1>
+          <p className="text-2xl pb-2">{description}</p>
+          <p className="text-lg pb-2">Available: {inStock ? 'Yes' : 'Stock Out'}</p>
+          <p className="text-base px-3 py-2 bg-gray-400 w-fit rounded-full">{material}</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default TilesPage;

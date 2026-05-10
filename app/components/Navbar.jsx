@@ -11,7 +11,7 @@ function NavbarPage() {
     return <div>Loading...</div>;
   }
 
-  console.log('Session data in Navbar: ', data);
+  // console.log('Session data in Navbar: ', data);
 
   const user = data?.user;
 
