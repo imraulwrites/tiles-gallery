@@ -16,8 +16,8 @@ function NavbarPage() {
   const user = data?.user;
 
   return (
-    <div className=''>
-      <nav className="w-full border-b px-6">
+    <div className="">
+      <nav className="w-full border-b px-2 md:px-6">
         <header className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/">

@@ -33,7 +33,7 @@ function AllTilesPages() {
 
   return (
     <div>
-      <div className="bg-[#232323] pb-20">
+      <div className="bg-[#232323] pb-20 px-6">
         <h2 className="text-gray-100 text-3xl py-4">All Tiles</h2>
 
         <div>

@@ -1,5 +1,6 @@
 import { CircleDollar } from '@gravity-ui/icons';
 import { Avatar, Button, Card, CloseButton, Link } from '@heroui/react';
+import Image from 'next/image';
 
 async function TilesPage(props) {
   const { id } = await props.params;
@@ -20,14 +21,9 @@ async function TilesPage(props) {
   const { title, description, image, price, material, inStock } = tilesDetails[0];
 
   return (
-    <div className="col-span-12 flex h-auto flex-col sm:flex-row gap-6 py-10">
-      <div className="relative w-full shrink-0 overflow-hidden rounded-2xl flex flex-1 ">
-        <img
-          alt="Cherries"
-          className="pointer-events-none inset-0 h-auto w-full scale-125 object-contain select-none"
-          loading="lazy"
-          src={image}
-        />
+    <div className="col-span-12 flex h-auto flex-col sm:flex-row gap-6 py-10 px-6">
+      <div className="aspect-square relative overflow-hidden rounded-2xl flex flex-1 border-2">
+        <Image src={image} alt={title} fill sizes="100vw" className="object-cover object-center" />
       </div>
       <div className="flex flex-1 flex-col justify-center gap-3">
         <div className="flex flex-col gap-1">
