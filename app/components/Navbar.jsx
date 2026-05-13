@@ -14,6 +14,7 @@ function NavbarPage() {
   // console.log('Session data in Navbar: ', data);
 
   const user = data?.user;
+  console.log(user)
 
   return (
     <div className="">
@@ -21,7 +22,7 @@ function NavbarPage() {
         <header className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/">
-              <p className="font-extrabold text-2xl font-stretch-125% ">Tiles Galore</p>
+              <p className="font-extrabold text-brick-red text-2xl font-stretch-125% ">Tiles Galore</p>
             </Link>
           </div>
           <ul className="flex items-center gap-6 text-base font-bold uppercase">
@@ -45,7 +46,7 @@ function NavbarPage() {
             ) : (
               <>
                 <Link className="no-underline" href="/auth/signin">
-                  <Button className="">Sign In</Button>
+                  <Button className="bg-[#232323] hover:bg-[#232323]/90">Sign In</Button>
                 </Link>
               </>
             )}

@@ -34,14 +34,15 @@ function AllTilesPages() {
   return (
     <div>
       <div className="bg-[#232323] pb-20 px-6">
-        <h2 className="text-gray-100 text-3xl py-4">All Tiles</h2>
+        <h2 className="text-white text-3xl py-4">All Tiles</h2>
 
-        <div>
+        <div className="py-4">
           <input
             type="text"
-            placeholder="Type your query"
+            placeholder="type your query ..."
             value={searchValue}
             onChange={handleSearch}
+            className="border border-gray-400 text-gray-200 rounded-lg px-4 py-1 outline-none"
           />
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
