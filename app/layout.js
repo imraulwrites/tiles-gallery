@@ -1,9 +1,8 @@
 import { Geist, Geist_Mono } from 'next/font/google';
-import { Antonio } from 'next/font/google'
+import { Antonio } from 'next/font/google';
 import './globals.css';
 import NavbarPage from './components/Navbar';
 import Footer from './components/Footer';
-
 
 // const geistSans = Geist({
 //   variable: '--font-geist-sans',
@@ -15,13 +14,11 @@ import Footer from './components/Footer';
 //   subsets: ['latin'],
 // });
 
-
-const antonio = Antonio({ 
+const antonio = Antonio({
   variable: '--font-antonio-sans',
   subsets: ['latin'],
   display: 'swap', // Recommended for better performance
-})
-
+});
 
 export const metadata = {
   title: 'Tiles Galore',

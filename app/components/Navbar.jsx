@@ -1,32 +1,24 @@
-'use client';
-
-import { Button } from '@heroui/react';
-import { signOut, useSession } from '../lib/auth-client';
 import Link from 'next/link';
+import SignInStatus from './SignInStatus';
 
 function NavbarPage() {
-  const { data, isPending } = useSession();
-
-  if (isPending) {
-    return <div>Loading...</div>;
-  }
-
-  // console.log('Session data in Navbar: ', data);
-
-  const user = data?.user;
-  console.log(user)
-
   return (
     <div className="">
       <nav className="w-full border-b px-2 md:px-6">
         <header className="flex h-16 items-center justify-between">
+          {/* Logo */}
           <div className="flex items-center gap-3">
             <Link href="/">
-              <p className="font-extrabold text-brick-red text-2xl font-stretch-125% ">Tiles Galore</p>
+              <p className="font-extrabold text-brick-red text-2xl font-stretch-125% ">
+                Tiles Galore
+              </p>
             </Link>
           </div>
-          <ul className="flex items-center gap-6 text-base font-bold uppercase">
-            <li>
+
+          {/* Menu */}
+
+          <ul className="flex items-center gap-6 text-base font-bold uppercase text-center md:text-left">
+            <li className="">
               <Link href="/">Home</Link>
             </li>
             <li>
@@ -37,20 +29,8 @@ function NavbarPage() {
             </li>
           </ul>
 
-          <div className="flex gap-4 items-center">
-            {user ? (
-              <>
-                <p>Welcome, {user.name}</p>
-                <Button onClick={() => signOut()}>Sign Out</Button>
-              </>
-            ) : (
-              <>
-                <Link className="no-underline" href="/auth/signin">
-                  <Button className="bg-[#232323] hover:bg-[#232323]/90">Sign In</Button>
-                </Link>
-              </>
-            )}
-          </div>
+          {/* SignIn / SignOut Status */}
+          <SignInStatus />
         </header>
       </nav>
     </div>

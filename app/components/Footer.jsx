@@ -27,14 +27,20 @@ function Footer() {
             <h4 className="mb-4">Social Links</h4>
             <div className="flex gap-3 justify-center mb-10">
               <div className="bg-white rounded-full px-2 py-1.5 text-black">
-                <Icon data={LogoFacebook} size="24" />
+                <a href="#">
+                  <Icon data={LogoFacebook} size="24" />
+                </a>
               </div>
 
               <div className="bg-white rounded-full px-2 py-1.5 text-black">
-                <Icon data={LogoTelegram} size="24" />
+                <a href="#">
+                  <Icon data={LogoTelegram} size="24" />
+                </a>
               </div>
               <div className="bg-white rounded-full px-2 py-1.5 text-black">
-                <Icon data={LogoSlack} size="24" />
+                <a href="#">
+                  <Icon data={LogoSlack} size="24" />
+                </a>
               </div>
             </div>
           </div>

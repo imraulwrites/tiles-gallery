@@ -9,11 +9,8 @@ import { ToastContainer, toast } from 'react-toastify';
 export default function SignUpPage() {
   const onSubmit = async e => {
     e.preventDefault();
-    console.log('target', e.currentTarget);
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
-
-    console.log('Form submitted with: ', userData);
 
     const { data, error } = await authClient.signUp.email({
       name: userData.name,
@@ -23,15 +20,8 @@ export default function SignUpPage() {
       callbackURL: '/',
     });
 
-    console.log('data', data);
-    console.log('error', error);
-
     if (error) {
       toast.error('Registration Failed.');
-    }
-
-    if (data) {
-      alert('Sign Up Successful! Please check your email to verify your account.');
     }
   };
 
@@ -39,9 +29,6 @@ export default function SignUpPage() {
     const { data, error } = await authClient.signIn.social({
       provider: 'google',
     });
-
-    console.log('data', data);
-    console.log('error', error);
 
     if (error) {
       toast.error('Login Failed.');
@@ -51,6 +38,7 @@ export default function SignUpPage() {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <div className="bg-[#e6e5df]/90 border border-gray-300 rounded-lg p-8 shadow-lg">
+        <h2 className="text-2xl font-bold pb-4">Sign Up </h2>
         <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
           {/* User Name */}
           <TextField

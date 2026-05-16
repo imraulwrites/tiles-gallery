@@ -1,6 +1,6 @@
-import { CircleDollar } from '@gravity-ui/icons';
-import { Avatar, Button, Card, CloseButton, Link } from '@heroui/react';
 import Image from 'next/image';
+import { Suspense } from 'react';
+import MainSkeleton from '../../components/MainSkeleton';
 
 async function TilesPage(props) {
   const { id } = await props.params;
@@ -9,13 +9,13 @@ async function TilesPage(props) {
     const data = await fetch('https://tiles-gallery-server-fowg.onrender.com/products');
     const result = await data.json();
 
-    console.log(result);
+    console.log('result from', result);
 
     tilesDetails = result.filter(item => item.id == id);
 
     console.log(tilesDetails);
   } catch (error) {
-    console.log(error);
+    throw new Error('Data fetching failed.');
   }
 
   const { title, description, image, price, material, inStock } = tilesDetails[0];

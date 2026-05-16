@@ -21,14 +21,8 @@ function SignInPage() {
       callbackURL: '/',
     });
 
-    console.log('Sign in response: ', { data, error });
-
     if (error) {
       toast.error('Login Failed');
-    }
-
-    if (data) {
-      alert('Sign Up Successful! Please check your email to verify your account.');
     }
   };
 
@@ -36,9 +30,6 @@ function SignInPage() {
     const { data, error } = await authClient.signIn.social({
       provider: 'google',
     });
-
-    console.log('data', data);
-    console.log('error', error);
 
     if (error) {
       toast.error('Login Failed');
@@ -48,7 +39,7 @@ function SignInPage() {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <div className="bg-[#e6e5df]/90 border border-gray-300 rounded-lg p-8 shadow-lg">
-        <h2 className="text-2xl font-bold pb-4">Sign In : </h2>
+        <h2 className="text-2xl font-bold pb-4">Sign In</h2>
         <Form className="flex w-96 flex-col gap-1.5" onSubmit={onSubmit}>
           {/* Email */}
           <TextField
