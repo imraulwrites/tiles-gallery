@@ -3,13 +3,26 @@ import Profile from '../../public/profile.jpg';
 import React from 'react';
 import { useSession } from '../lib/auth-client';
 import Image from 'next/image';
+import MainSkeleton from '../components/MainSkeleton';
+import FeaturedTilesErrorBoundary from '../components/FeaturedTilesErrorBoundary';
 
 function MyProfilePage() {
-  const { data, isPending } = useSession();
+  const { data, isPending, error } = useSession();
 
   console.log('data', data);
 
+  console.log('isPending', isPending);
+  console.log('error', error);
+
   const user = data?.user;
+
+  if (isPending) {
+    return <MainSkeleton />;
+  }
+
+  if (error) {
+    throw new Error('Data Fetching Failed.');
+  }
 
   return (
     <div className="mx-auto w-fit">
@@ -17,7 +30,7 @@ function MyProfilePage() {
 
       <div className="flex gap-10 py-10">
         <div className="w-[300px] h-[300px] rounded-full overflow-hidden relative">
-          <Image src={Profile} alt='my-image' sizes="100vw" fill className="object-cover" />
+          <Image src={Profile} alt="my-image" sizes="100vw" fill className="object-cover" />
         </div>
 
         <div className="flex flex-col justify-center">
@@ -30,3 +43,12 @@ function MyProfilePage() {
 }
 
 export default MyProfilePage;
+{
+  /* <FeaturedTilesErrorBoundary>
+
+</FeaturedTilesErrorBoundary>
+
+<Suspense></Suspense>
+
+<MainSkeleton /> */
+}

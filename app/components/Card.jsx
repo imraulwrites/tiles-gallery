@@ -27,7 +27,7 @@ function CardComponent({ data }) {
         <div className="flex lg:flex-col lg:w-fit lg:gap-1 justify-between w-full">
           <h3 className="bg-gray-200/20 shadow-md px-4 py-2 rounded-sm text-base">{title}</h3>
           <Link
-            className="bg-gray-200/70  shadow-md px-4 py-2 rounded-sm text-base"
+            className="bg-gray-200/70 hover:bg-gray-200/80 shadow-md px-4 py-2 rounded-sm text-base"
             href={`/tiles/${id}`}
           >
             Details Button

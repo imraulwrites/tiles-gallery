@@ -11,7 +11,11 @@ export default function Error({ error, unstable_retry }) {
           className="bg-gray-200 text-sm border rounded-md px-3 py-1.5 cursor-pointer hover:bg-gray-300 duration-300 w-fit"
           onClick={() => unstable_retry()}
         >
-          Refresh
+          Try again
+        </button>
+
+        <button className="bg-gray-200 text-sm border rounded-md px-3 py-1.5 cursor-pointer hover:bg-gray-300 duration-300">
+          <Link href="/">Back to Home</Link>
         </button>
       </div>
     </div>
