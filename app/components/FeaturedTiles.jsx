@@ -1,9 +1,14 @@
 import CardComponent from './Card';
 
 async function FeaturedTiles() {
-  const data = await fetch('https://tiles-gallery-server-fowg.onrender.com/featured');
+  let result = [];
+  try {
+    const data = await fetch('https://tiles-gallery-server-fowg.onrender.com/featured');
 
-  const result = await data.json();
+    result = await data?.json();
+  } catch (error) {
+    throw new Error('Data fetching failed.');
+  }
 
   return (
     <div className="bg-[#232323] pb-20 px-2 md:px-6">

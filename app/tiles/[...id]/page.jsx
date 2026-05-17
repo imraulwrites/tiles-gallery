@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import { Suspense } from 'react';
-import MainSkeleton from '../../components/MainSkeleton';
 
 async function TilesPage(props) {
   const { id } = await props.params;

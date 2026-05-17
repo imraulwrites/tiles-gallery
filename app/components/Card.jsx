@@ -1,5 +1,3 @@
-import { CircleDollar } from '@gravity-ui/icons';
-import { Avatar, Button, Card, CloseButton } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,7 +6,6 @@ function CardComponent({ data }) {
   return (
     <div className="relative rounded-sm text-foreground">
       <div className="aspect-square overflow-hidden p-2 rounded-md">
-        {/* <img className="w-full h-full object-cover object-center rounded-sm" src={image} alt="" /> */}
         <Image
           src={image}
           alt={title}

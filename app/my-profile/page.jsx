@@ -26,8 +26,6 @@ function MyProfilePage() {
 
   return (
     <div className="mx-auto w-fit">
-      {/* <h2 className="text-4xl font-semibold mb-5">My Profile</h2> */}
-
       <div className="flex gap-10 py-10">
         <div className="w-[300px] h-[300px] rounded-full overflow-hidden relative">
           <Image src={Profile} alt="my-image" sizes="100vw" fill className="object-cover" />
@@ -43,12 +41,3 @@ function MyProfilePage() {
 }
 
 export default MyProfilePage;
-{
-  /* <FeaturedTilesErrorBoundary>
-
-</FeaturedTilesErrorBoundary>
-
-<Suspense></Suspense>
-
-<MainSkeleton /> */
-}

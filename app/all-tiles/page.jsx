@@ -1,9 +1,7 @@
 'use client';
 
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CardComponent from '../components/Card';
-import FeaturedTilesErrorBoundary from '../components/FeaturedTilesErrorBoundary';
-import MainSkeleton from '../components/MainSkeleton';
 
 function AllTilesPages() {
   const [searchValue, setSearchValue] = useState('');
@@ -18,12 +16,12 @@ function AllTilesPages() {
           setProducts(result);
         }
       } catch (error) {
-        throw new Error('Error fetching data: ', error);
+        console.error(error);
       }
     };
 
     fetchData();
-  }, [searchValue]);
+  }, []);
 
   const handleSearch = e => {
     setSearchValue(e.target.value);
@@ -47,15 +45,11 @@ function AllTilesPages() {
             className="border border-gray-400 text-gray-200 rounded-lg px-4 py-1 outline-none"
           />
         </div>
-        <FeaturedTilesErrorBoundary>
-          <Suspense fallback={<MainSkeleton />}>
-            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {filteredList?.map((item, id) => (
-                <CardComponent key={id} data={item} />
-              ))}
-            </div>
-          </Suspense>
-        </FeaturedTilesErrorBoundary>
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {filteredList?.map((item, id) => (
+            <CardComponent key={id} data={item} />
+          ))}
+        </div>
       </div>
     </div>
   );
